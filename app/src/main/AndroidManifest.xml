@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android2.seniorappclone">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SeniorAppClone">
+        <activity android:name=".UpadateMember"></activity>
+        <activity android:name=".InActiveMember" />
+        <activity android:name=".chooseInMasterlist" />
+        <activity android:name=".ActiveMember" />
+        <activity android:name=".AddMember" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".Registration" />
+        <activity android:name=".LogInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
