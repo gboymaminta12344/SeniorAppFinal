@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class Members {
 
+    //ito yung custome object na ginawa natin para matawag mo kahi san gami lgn ang Members mb = new Members
 
     private String Fullname;
     private String Birthday;
@@ -20,7 +21,7 @@ public class Members {
     private String AddedBy;
     private String Status;
 
-
+   //important dont delete
     public Members() {
         // no args constructor
     }

@@ -46,6 +46,7 @@ public class MembersAdapter extends FirestoreRecyclerAdapter<Members, MembersAda
     @Override
     protected void onBindViewHolder(@NonNull MembersHolder holder, int position, @NonNull Members model) {
 
+        //dito ang operation
 
         //holder
         holder.viewName.setText(model.getFullname());
@@ -73,7 +74,7 @@ public class MembersAdapter extends FirestoreRecyclerAdapter<Members, MembersAda
     @Override
     public MembersHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-
+        //dito ang layout
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.members_item, parent, false);
         context = parent.getContext();
         return new MembersHolder(view);
