@@ -49,7 +49,7 @@ public class LogInActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-                    if (documentSnapshot.getString("UserEmail") != null) {
+                    if (documentSnapshot.getString("userEmail") != null) {
 
                         startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         finish();
@@ -135,7 +135,7 @@ public class LogInActivity extends AppCompatActivity {
                 Log.d("TAG", "onSuccess" + documentSnapshot.getData());
 
 
-                if (documentSnapshot.getString("UserEmail") != null) {
+                if (documentSnapshot.getString("userEmail") != null) {
 
                     startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                     finish();

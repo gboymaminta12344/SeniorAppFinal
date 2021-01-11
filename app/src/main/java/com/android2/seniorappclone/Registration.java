@@ -88,13 +88,30 @@ public class Registration extends AppCompatActivity {
                         FirebaseUser user = fauth.getCurrentUser();
 
                         DocumentReference df = fstore.collection("Users").document(user.getUid());
-                        Map<String, Object> userInfo = new HashMap<>();
-                        userInfo.put("FullName", fullName.getEditText().getText().toString());
-                        userInfo.put("UserEmail", email.getEditText().getText().toString());
-                        userInfo.put("UserPhone", phone.getEditText().getText().toString());
 
-                        df.set(userInfo);
-                        startActivity(new Intent(getApplicationContext(),LogInActivity.class));
+                        //Process sa pag add nilagay lang sa loob din ng pagupload para isang click na lang ng button
+                        String FullName = fullName.getEditText().getText().toString();
+                        String UserEmail = email.getEditText().getText().toString();
+                        String UserPhone = phone.getEditText().getText().toString();
+
+
+
+                        //Custom object na member tinawag dito para magamit
+                        Users users = new Users();
+
+
+                        users.setUserId(user.getUid());
+                        users.setFullName(FullName);
+                        users.setUserEmail(UserEmail);
+                        users.setUserPhone(UserPhone);
+                        users.setUserPosition(null);
+                        users.setUser_ImageUri(null);
+
+
+
+
+                        df.set(users);
+                        startActivity(new Intent(getApplicationContext(), LogInActivity.class));
                         finish();
 
 
@@ -117,8 +134,9 @@ public class Registration extends AppCompatActivity {
 
 
     }
-    public void clickToLoginPage(View view){
-        startActivity(new Intent(getApplicationContext(),LogInActivity.class));
+
+    public void clickToLoginPage(View view) {
+        startActivity(new Intent(getApplicationContext(), LogInActivity.class));
     }
 
 
