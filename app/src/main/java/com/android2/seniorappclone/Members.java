@@ -26,7 +26,8 @@ public class Members {
         // no args constructor
     }
 
-    public Members(String Fullname, String Birthday, Date timestamp, String Gender, String member_id, String Barangay, String Zone, String member_ImageUri, String AddedBy, String Status) {
+    public Members(String Fullname, String Birthday, Date timestamp, String Gender, String member_id,
+                   String Barangay, String Zone, String member_ImageUri, String AddedBy, String Status) {
 
         this.Birthday = Fullname;
         this.Birthday = Birthday;

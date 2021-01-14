@@ -136,7 +136,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(HomeActivity.this, "Alisin na Din Pag di nagawa", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getApplicationContext(), Give_Medicine.class));
+
 
             }
         });

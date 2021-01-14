@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SeniorAppClone">
-        <activity android:name=".UpdateMyProfile"></activity>
+        <activity android:name=".ListOfGiven"></activity>
+        <activity android:name=".Medication" />
+        <activity android:name=".Give_Medicine" />
+        <activity android:name=".UpdateMyProfile" />
         <activity android:name=".UpadateMember" />
         <activity android:name=".InActiveMember" />
         <activity android:name=".chooseInMasterlist" />
