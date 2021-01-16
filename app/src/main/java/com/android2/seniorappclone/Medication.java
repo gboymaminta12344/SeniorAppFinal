@@ -23,6 +23,8 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -40,6 +42,7 @@ public class Medication extends AppCompatActivity {
 
     //Listener
     private static final String TAG = null;
+    private static final String TAG2 = null;
 
     //Dialog
     Dialog dialog;
@@ -55,6 +58,10 @@ public class Medication extends AppCompatActivity {
     String ImageUri;
 
 
+    String CurrentLogin;
+    String userFName;
+    String userPosition;
+
     TextView Display_Name_For_Medication;
     ImageView View_SeniorFace;
     FloatingActionButton add_medicine;
@@ -63,16 +70,28 @@ public class Medication extends AppCompatActivity {
     //firebase FiresSore collection and document reference
     CollectionReference GiveMedicine;
     DocumentReference getMedRef;
+    DocumentReference usersRef;
 
     //fire Store
     FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     DocumentReference membersRef;
+
+    //firebase
+    FirebaseAuth fAuth;
+    FirebaseUser currentUser;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medication);
+
+        //fire Store initialization
+        fAuth = FirebaseAuth.getInstance();
+        currentUser = fAuth.getCurrentUser();
+
+        CurrentLogin = currentUser.getUid();
+        usersRef = fStore.collection("Users").document(CurrentLogin);
 
 
         //get intent
@@ -133,9 +152,12 @@ public class Medication extends AppCompatActivity {
                     gi.setMemberMedicineDescription(med_Description);
                     gi.setMemberMedicineNote(med_notes);
                     gi.setMember_id(Member_Id);
+                    gi.setGiven_by(userFName);
+                    gi.setGiven_by_position(userPosition);
+                    gi.setImage_of_sen(ImageUri);
 
                     GiveMedicine.add(gi);
-
+                    dialog.dismiss();
                     Snackbar.make(findViewById(android.R.id.content), "added", Snackbar.LENGTH_LONG).show();
 
 
@@ -176,6 +198,27 @@ public class Medication extends AppCompatActivity {
 
                 }
 
+
+            }
+        });
+
+        //userRef
+
+        usersRef.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+
+
+                //Handle Error Pag may problema sa pag picture si addSnapshotListener sa membersRef na reference natin para sa document sa ating database
+                if (error != null) {
+                    Toast.makeText(Medication.this, "Error while loading!", Toast.LENGTH_LONG).show();
+                    Log.d(TAG2, error.toString());
+                    return;
+                }
+                if (value.exists()) {
+                    userFName = value.getString("fullName");
+                    userPosition = value.getString("userPosition");
+                }
 
             }
         });

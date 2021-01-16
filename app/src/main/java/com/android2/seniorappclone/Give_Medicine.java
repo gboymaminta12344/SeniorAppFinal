@@ -23,16 +23,7 @@ public class Give_Medicine extends AppCompatActivity {
     private static final String TAG = "Data";
 
     //ini
-
     EditText searchView;
-
-
-    //Dialog
-    Dialog dialog;
-    Button cancel, Add_med, load_data1;
-    EditText med_des, med_note;
-    String med_Description;
-    String med_notes;
 
 
 

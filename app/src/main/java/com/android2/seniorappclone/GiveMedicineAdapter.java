@@ -22,15 +22,7 @@ import com.squareup.picasso.Picasso;
 public class GiveMedicineAdapter extends FirestoreRecyclerAdapter<Members, GiveMedicineAdapter.GiveMedicineHolder> {
 
 
-
     private Context context;
-    //firebase Ini
-    FirebaseStorage storage = FirebaseStorage.getInstance();
-    FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-
-    //firebase Ini
-    DocumentReference df;
-    String status;
 
 
     public GiveMedicineAdapter(@NonNull FirestoreRecyclerOptions<Members> options) {

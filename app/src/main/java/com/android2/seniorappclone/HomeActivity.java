@@ -125,8 +125,8 @@ public class HomeActivity extends AppCompatActivity {
         card_event_meeting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //to event
-                Toast.makeText(HomeActivity.this, "Alisin na lang Pag di nagawa", Toast.LENGTH_LONG).show();
+                //to list of given medicine
+                startActivity(new Intent(getApplicationContext(), ListOfGiven.class));
             }
         });
 

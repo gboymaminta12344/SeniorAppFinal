@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fragmenttemplate"
+    tools:context=".BinigayNaGamot">
+
+
+    <TextView
+        android:id="@+id/binigay_tag_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:gravity="start"
+        android:text="Information"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView_holder_med_binigay"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="30dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/binigay_tag_intro" />
+
+
+    <TextView
+        android:id="@+id/Edit_Profile_Page_Name_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="50dp"
+        android:gravity="center"
+        android:hint="Name"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_holder_med_binigay" />
+
+    <TextView
+        android:id="@+id/senior_name_tag_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Name of Senior"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Edit_Profile_Page_Name_information" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="10dp" />
+
+    <TextView
+        android:id="@+id/txtCode_date_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Date Medicine Given:    "
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/Edit_Profile_Page_Name_information" />
+
+    <TextView
+        android:id="@+id/text_display_date_information"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="Date Medicine Release"
+        app:layout_constraintStart_toEndOf="@+id/txtCode_date_information"
+        app:layout_constraintTop_toTopOf="@id/txtCode_date_information" />
+
+
+    <TextView
+        android:id="@+id/txtCode_medicName_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:text="Medicine:    "
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/txtCode_date_information" />
+
+    <TextView
+        android:id="@+id/text_display_medicName_information"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="Date Medicine Release"
+        app:layout_constraintStart_toEndOf="@+id/txtCode_medicName_information"
+        app:layout_constraintTop_toTopOf="@id/txtCode_medicName_information" />
+
+    <TextView
+        android:id="@+id/txtCode_medicNote_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:text="Note:    "
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/txtCode_medicName_information" />
+
+    <TextView
+        android:id="@+id/text_display_medicNote_information"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/txtCode_medicNote_information"
+        app:layout_constraintTop_toTopOf="@id/txtCode_medicNote_information" />
+
+
+    <TextView
+        android:id="@+id/txtCode_given_by_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Given by:    "
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/txtCode_medicNote_information" />
+
+    <TextView
+        android:id="@+id/text_display_given_by_information"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="start"
+        app:layout_constraintStart_toEndOf="@+id/txtCode_given_by_information"
+        app:layout_constraintTop_toTopOf="@id/txtCode_given_by_information" />
+
+
+    <TextView
+        android:id="@+id/text_display_position_information"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:gravity="start"
+        app:layout_constraintStart_toEndOf="@+id/txtCode_given_by_information"
+        app:layout_constraintTop_toBottomOf="@+id/text_display_given_by_information" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

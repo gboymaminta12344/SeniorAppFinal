@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SeniorAppClone">
-        <activity android:name=".ListOfGiven"></activity>
+        <activity android:name=".BinigayNaGamot"></activity>
+        <activity android:name=".ListOfGiven" />
         <activity android:name=".Medication" />
         <activity android:name=".Give_Medicine" />
         <activity android:name=".UpdateMyProfile" />

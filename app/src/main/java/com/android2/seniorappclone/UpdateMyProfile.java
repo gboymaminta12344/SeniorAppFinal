@@ -60,7 +60,7 @@ public class UpdateMyProfile extends AppCompatActivity {
     EditText update_user_FName;
     EditText update_user_Phone;
     EditText update_user_position;
-    Button update_picture_user;
+    Button update_picture_user,update_user_info;
 
     //lumang Image uri pag di pa na update ang pic
     String user_ImageUri;
@@ -136,6 +136,14 @@ public class UpdateMyProfile extends AppCompatActivity {
             }
         });
 
+        update_user_info = findViewById(R.id.Button_Profile_Page2_update);
+        update_user_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                upDateProfileData();
+            }
+        });
+
     }
 
     @Override
@@ -171,6 +179,24 @@ public class UpdateMyProfile extends AppCompatActivity {
 
             }
         });
+    }
+    //update data
+    private void upDateProfileData(){
+
+        String updateFName = update_user_FName.getText().toString();
+        String updateUPhone = update_user_Phone.getText().toString();
+        String updateUPosition= update_user_position.getText().toString();
+
+        //ung nas members na class ung may getter and setter
+
+        users.setFullName(updateFName);
+        users.setUserPhone(updateUPhone);
+        users.setUserPosition(updateUPosition);
+
+        usersRef.set(users, SetOptions.mergeFields("fullName","userPhone","userPosition"));
+        Snackbar.make(findViewById(android.R.id.content), "UpDated", Snackbar.LENGTH_LONG).show();
+
+
     }
 
     //choose picture from the gallery
